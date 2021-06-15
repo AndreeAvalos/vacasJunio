@@ -1,0 +1,50 @@
+<h1>LOGIN</h1>
+
+<div>
+  <img src="/assets/img/icono_login.png" class="img-thumbnail" alt="Cinque Terre">
+  <h1>Usuario: {{usuario.user_name}}</h1>
+  <div>
+    User: <input type="text" [(ngModel)]="usuario.user_name" placeholder="Usuario">
+    Password: <input type="password" [(ngModel)]="usuario.password">
+    <button (click)="login()">INICIA SESSION</button>
+  </div>
+  <div>
+    <p *ngIf="loggeado">LOGEADO CON EXITO</p>
+  </div>
+
+  <div>
+    <h5>Lista de Usuarios</h5>
+    <div *ngFor="let user of users">
+      <li>{{user.user_name}}</li>
+    </div>
+  </div>
+
+  <div>
+    <h5>Lista de Tiendas</h5>
+    <div ng-controller="AppCtrl" ng-cloak>
+      <div *ngFor="let tienda of tiendas">
+        <md-card>
+          <md-card-header>
+            <md-card-header-text>
+              <span class="md-title">{{tienda.Nombre}}</span>
+              <span class="md-subhead">{{tienda.Calificacion}}</span>
+            </md-card-header-text>
+          </md-card-header>
+          <md-card-content>
+            <p>
+              {{tienda.Descripcion}}
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div>
+  <h1>{{producto.Nombre}}</h1>
+  <h2>{{producto.Descripcion}}</h2>
+  <h3>{{producto.Precio}}</h3>
+
+</div>
